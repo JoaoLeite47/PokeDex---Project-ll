@@ -1,0 +1,29 @@
+{
+  "name": "pokedex---project-ll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoaoLeite47/PokeDex---Project-ll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoaoLeite47/PokeDex---Project-ll/issues"
+  },
+  "homepage": "https://github.com/JoaoLeite47/PokeDex---Project-ll#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
+}

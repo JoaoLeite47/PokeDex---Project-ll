@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PokeDex</title>
+  </head>
+  <body>
+    <header>
+      <h1>PokeDex</h1>
+    </header>
+    <main>
+      <section id="cards">
+        <% pokedex.forEach((pokemon) => { %>
+
+        <div class="card">
+          <p class="id"><%= pokemon.id %></p>
+          <img src="<%= pokemon.image %>" alt="" />
+          <h2 class="name"><%= pokemon.name %></h2>
+          <p class="description"><%= pokemon.description %></p>
+          <p class="type"><%= pokemon.type %></p>
+          <p class="height"><%= pokemon.height %></p>
+          <p class="weight"><%= pokemon.weight %></p>
+          <p class="category"><%= pokemon.category %></p>
+          <p class="abillities"><%= pokemon.abilities %></p>
+        </div>
+        <% }) %>
+      </section>
+
+      <section id="register">
+        <h2>Register new pokemon!</h2>
+
+        <form action="/add" method="post">
+          <label for="image">Image Link</label>
+          <input type="text" name="image" id="image" />
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" />
+
+          <label for="description">Description</label>
+          <input type="text" name="description" id="description" />
+
+          <label for="type">Type</label>
+          <input type="text" name="type" id="type" />
+
+          <label for="height">Height</label>
+          <input type="text" name="height" id="height_form" />
+
+          <label for="weight">Weight</label>
+          <input type="text" name="weight" id="weight" />
+
+          <label for="category">Category</label>
+          <input type="text" name="category" id="category" />
+
+          <label for="abilities">Abilities</label>
+          <input type="text" name="abilities" id="abilities" />
+
+          <button onclick="sucess()" id="btn_new" type="submit">New</button>
+        </form>
+    </main>
+    
+    <footer>
+      <p>
+        <a href="https://github.com/JoaoLeite47">@JoaoLeite47</a>
+      </p>
+    </footer>
+
+  </body>
+</html>
