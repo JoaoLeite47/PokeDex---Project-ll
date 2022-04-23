@@ -1,67 +1,62 @@
 @import url("https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&family=Anek+Tamil:wght@100;200;300;400;500;600;700;800&family=Roboto:ital,wght@0,100;0,300;1,100;1,300&display=swap");
-
 * {
-  padding: 0;
+  /* representa todas as tags */
   margin: 0;
+  padding: 0;
   font-family: "Akshar", sans-serif;
 }
 
-header {
-  background-color: #e3350d;
-  text-align: center;
-  color: #fff;
-  padding: 0.5rem;
-  font-size: 1rem;
-  transition-duration: 0.4s;
-  cursor: pointer;
+body {
+  height: 100vh;
+  width: 100vw;
 }
-header:hover {
+
+header {
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  height: 5%;
+  background-color: #e3350d;
+  color: #fff;
+}
+
+header img#logo {
+  margin: 0 1rem 0 1rem;
+  height: 100%;
+  animation: mymove 5s infinite;
+}
+@keyframes mymove {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+
+header a {
+  height: 100%;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+header a:hover {
   color: #616161;
 }
+
+header ul {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+}
+
 main {
   background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/18/46/fTwUYP.png");
-  background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
-  background-size: cover;
-  height: 100%;
+  background-position: 100%;
+  background-size: 140rem;
+  min-height: 100%;
+  padding: 10px;
 }
-section#cards {
-  margin: 0 10rem 0 10rem;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin-top: 5rem;
-}
-.card {
-  width: 17rem;
-  box-shadow: 5px 5px 5px 5px #616161;
-  border-radius: 20px 40px;
-  background: linear-gradient(#005AA7, #FFFDE4);
-  padding: 1rem;
-  text-align: center;
-  margin-top: 1rem;
-}
-section#cards .card img {
-  width: 100%;
-}
-section#cards .name {
-  color: #e3350d;
-}
-section#cards .id {
-  color: #ffff;
-  text-align: left;
-}
-section#cards .type {
-  color: rgb(1, 85, 1);
-}
-section#cards .category {
-  color: rgb(145, 0, 0);
-}
-section#cards .abillities {
-  color: rgb(1, 85, 1);
-}
-/* Lista de cadastros! */
+
 section#register {
   display: flex;
   justify-content: center;
@@ -100,7 +95,7 @@ section#register form label {
 
 section#register form button {
   padding: 1rem;
-  border-radius: 30%;
+  border-radius: 50%;
   font-size: 1.2rem;
   display: flex;
   margin: 0 auto;
@@ -115,12 +110,76 @@ section#register form button:hover {
   color: #000000;
 }
 
+section#detalhes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #c0a322;
+}
+
+table tr:nth-child(odd) {
+  color: #e3350d;
+}
+
+table thead th {
+  color: #618181;
+}
+
+section#pokedex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding-top: 5rem;
+}
+section#pokedex a {
+  text-decoration: none;
+}
+
+article.card {
+  height: 350px;
+  width: 220px;
+  box-shadow: 5px 5px 5px 5px #616161;
+  border-radius: 20px 40px;
+  background: linear-gradient(#005aa7, #fffde4);
+}
+
+article.card div.card_image {
+  height: 80%;
+}
+
+article.card img {
+  height: 80%;
+}
+
+article.card div.dados_pokemon {
+  display: flex;
+  justify-content: center;
+  color: #e3350d;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+article.card.id {
+  color: #05f51f;
+}
+
 footer {
+  height: 2rem;
   background-color: #e3350d;
   text-align: center;
-  color: #fff;
-  font-size: 1rem;
   cursor: pointer;
+}
+footer a {
   text-decoration: none;
-  padding: 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
 }

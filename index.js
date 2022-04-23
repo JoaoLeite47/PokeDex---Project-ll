@@ -1,64 +1,108 @@
 import express from "express";
-// import req from "express/lib/request";
 import path from "path";
-const app = express();
-
-app.set("view engine", "ejs");
 
 const __dirname = path.resolve(path.dirname(""));
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
-const pokedex = [
+let pokedex = [
   {
-    id: "0.01",
-    image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
-    name: "Charmander",
-    description:
-      "It has a preference for hot things. When it rains, steam is said to spout from the tip of its tail.",
-    type: "Fire ↑",
-    height: "0.6 m",
-    weight: "8.5 Kg",
-    category: "Lizard",
-    abilities: "Blaze",
+    id: 0.01,
+    nome: "Mewtwo ",
+    tipo: "Psychic",
+    descricao:
+      "Its DNA is almost the same as Mew's. However, its size and disposition are vastly different.",
+    altura: "2.0 m",
+    peso: "122.0 kg",
+    categoria: "Genetic",
+    habilidade: "Pressure",
+    img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png",
   },
   {
-    id: "0.02",
-    image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
-    name: "Squirtle",
-    description:
-      "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
-    type: "Water ↑",
-    height: "0.5 m",
-    weight: "9.0 Kg",
-    category: "Tiny Turtle",
-    abilities: "Torrent",
+    id: 0.02,
+    nome: "Arbok ",
+    tipo: "Poison",
+    descricao:
+      "The frightening patterns on its belly have been studied. Six variations have been confirmed.",
+    altura: "3.5 m",
+    peso: "65.0 kg",
+    categoria: "Cobra",
+    habilidade: "Shed Skin",
+    img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png",
   },
   {
-    id: "0.03",
-    image: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-    name: "Bulbasaur",
-    description:
-      "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
-    type: "Grass ↑",
-    height: "0.7 m",
-    weight: "6.9 Kg",
-    category: "Seed",
-    abilities: "Overgrow",
+    id: 0.03,
+    nome: "Ninetales  ",
+    tipo: "Psychic",
+    descricao:
+      "It is said to live 1,000 years, and each of its tails is loaded with supernatural powers.",
+    altura: "1.1 m",
+    peso: "19.9 kg",
+    categoria: "Fox",
+    habilidade: "Flash Fire",
+    img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png",
+  },
+  {
+    id: 0.04,
+    nome: "Sawk",
+    tipo: "Fighting",
+    descricao:
+      "If you see a Sawk training in the mountains in its single-minded pursuit of strength, it's best to quietly pass by.",
+    altura: "1.4 m",
+    peso: "51.0 kg",
+    categoria: "Karate",
+    habilidade: "Inner Focus",
+    img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/539.png",
+  },
+  {
+    id: 0.05,
+    nome: "Cyndaquil",
+    tipo: "Fire",
+    descricao:
+      "Cyndaquil protects itself by flaring up the flames on its back. The flames are vigorous if the Pokémon is angry. However, if it is tired, the flames splutter fitfully with incomplete combustion.",
+    altura: "0.5 m",
+    peso: "7.9 kg",
+    categoria: "Fire Mouse",
+    habilidade: "Blaze",
+    img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png",
   },
 ];
 
 app.get("/", (req, res) => {
-  const pokemon = undefined;
-  res.render("index", { pokedex });
+  res.render("index.ejs", {
+    pokedex,
+  });
 });
 
-app.post("/add", (req, res) => {
+app.get("/detalhes/:id", (req, res) => {
+  let pokemon;
+  pokedex.filter((element) => {
+    if (element.id == req.params.id) {
+      pokemon = element;
+    }
+  });
+  console.log(pokemon);
+  res.render("detalhes.ejs", {
+    pokemon,
+  });
+});
+app.get("/cadastro", (req, res) => {
+  res.render("cadastro.ejs");
+});
+app.post("/cadastro", (req, res) => {
   const pokemon = req.body;
-  pokemon.id = pokedex.length / 100 + +0.01;
+  pokemon.id = (pokedex.length / 100 + +0.01).toFixed(2);
   pokedex.push(pokemon);
-
   res.redirect("/");
 });
 
-const port = 3001;
-app.listen(port, () => console.log("Server on http://localhost:3001"));
+const port = 3003;
+app.listen(port, () =>
+  console.log(`Servidor rodando em http://localhost:${port}`)
+);
