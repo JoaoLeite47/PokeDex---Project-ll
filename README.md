@@ -9,6 +9,8 @@ Mas que com certeza me fez olhar a programação de forma diferente e com muito 
 
 A proposta da Blue Edtech era desenvolver uma pokedex em EJS, sem frameworks!
 
+Pokedex link: https://pokedexjaoleite47.herokuapp.com
+
 ### detalhes-2
 A concepção desse projeto foi feita com base nas cores do Design Pattern original da https://www.pokemon.com/br/pokedex/ Juntamente com todos os dados dos pokemons cadastrados!
 
