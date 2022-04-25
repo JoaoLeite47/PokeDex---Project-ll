@@ -1,4 +1,6 @@
 # Pokedex - projeto do módulo 2 da Blue Edtech
+![aa3cef9b-f3d5-4421-b37f-41d9a8c88222](https://user-images.githubusercontent.com/100146681/165136908-21b64950-46a9-42e8-96d9-3326d1519948.gif)
+
 
 ## Detalhes 
 
@@ -7,17 +9,22 @@ Mas que com certeza me fez olhar a programação de forma diferente e com muito 
 
 A proposta da Blue Edtech era desenvolver uma pokedex em EJS, sem frameworks!
 
+### detalhes-2
+A concepção desse projeto foi feita com base nas cores do Design Pattern original da https://www.pokemon.com/br/pokedex/ Juntamente com todos os dados dos pokemons cadastrados!
+
 ## Stacks
 
 Projeto concebido utilizando as tecnologias: 
-
-EJS
-JavaScript
-Node.js
-Express
-Nodemon
+<list>
+EJS /
+JavaScript /
+Node.js /
+Express /
+Nodemon /
 CSS
-
+</list>  
+<img src="https://img.icons8.com/ios-filled/100/000000/javascript.png"/>
+<img src="https://img.icons8.com/ios-filled/100/000000/css3.png"/>
 
 
 
