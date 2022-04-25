@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if(message != "") {  %>
+      <section id="message">
+          <p><%= message %></p> <span id="close">&times;</span>
+      </section>
+  <% }  %>
     <%- include('./partials/header.ejs') %>
     <main>
       <section id="pokedex">

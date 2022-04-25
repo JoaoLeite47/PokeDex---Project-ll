@@ -73,10 +73,15 @@ let pokedex = [
     img: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/155.png",
   },
 ];
+let message = "";
 
 app.get("/", (req, res) => {
+  setTimeout(() => {
+    message = "";
+  }, 1000);
   res.render("index.ejs", {
     pokedex,
+    message,
   });
 });
 
@@ -92,15 +97,19 @@ app.get("/detalhes/:id", (req, res) => {
     pokemon,
   });
 });
+
 app.get("/cadastro", (req, res) => {
   res.render("cadastro.ejs");
 });
+
 app.post("/cadastro", (req, res) => {
   const pokemon = req.body;
   pokemon.id = (pokedex.length / 100 + +0.01).toFixed(2);
   pokedex.push(pokemon);
+  message = `Pokemon Cadastrado!`;
   res.redirect("/");
 });
+
 
 const port = 3003;
 app.listen(port, () =>
