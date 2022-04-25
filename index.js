@@ -1,8 +1,7 @@
-require("dotenv").config();
+// require("dotenv").config();
 import express from "express";
 import path from "path";
 
-const port = process.env.PORT || 3000;
 
 const __dirname = path.resolve(path.dirname(""));
 
@@ -113,8 +112,7 @@ app.post("/cadastro", (req, res) => {
   res.redirect("/");
 });
 
-
-
+const port = process.env.PORT || 3000;
 app.listen(port, () =>
   console.log(`Servidor rodando em http://localhost:${port}`)
 );
