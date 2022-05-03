@@ -20,7 +20,6 @@ Projeto concebido utilizando as tecnologias:
 <list>
 EJS /
 JavaScript /
-Node.js /
 Express /
 Nodemon /
 CSS
